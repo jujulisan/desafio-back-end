@@ -1,0 +1,20 @@
+<h1 class="title">Lojas</h1>
+<h3 class="subtitle"><%= link_to 'Adicionar documento CNAB', transactions_new_url %></h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Loja</th>
+      <th>Dono</th>
+      <th>Transações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @stores.each do |store| %>
+      <tr>
+        <th><%= store.name %></th>
+        <th><%= store.owner_name %></th>
+        <th><%= link_to 'Transações', store_path(store.id) %></th>
+      </tr>
+    <% end %>
+  </tbody> 
+</table>

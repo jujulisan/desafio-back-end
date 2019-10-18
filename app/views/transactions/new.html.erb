@@ -1,0 +1,15 @@
+<h1 class="title">Insira o arquivo</h1>
+
+<%= form_tag ({:controller => 'transactions', :action => 'upload_file'}), :enctype =>'multipart/form-data' do %>
+  
+  <div class="control">
+    <%= file_field_tag 'file', class: "input is-focused" %>
+  </div>
+  <div class="control">
+    <%= submit_tag 'Inserir Arquivo', class: "button is-info" %>
+  </div>
+  
+<% end %>
+<% if response && response.status == 403 %>
+  <p class="help is-danger">Formato válido apenas txt</p>
+<% end %>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BlurPagment</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <section class="hero full-page is-fullheight">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <div class="column is-3 is-offset-3">
+    
+            <%= yield %>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

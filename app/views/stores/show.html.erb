@@ -1,0 +1,26 @@
+<h1 class="title"><%= @store.name %></h1>
+<h2 class="subtitle"><%= @store.owner_name %></h2>
+<h3 class="subtitle"><%= link_to 'Ver Tipos de transação', transactions_kind_url %></h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Tipos de Transação</th>
+      <th>Valor</th>
+      <th>CPF</th>
+      <th>Cartão</th>
+      <th>Data e Hora da ocorrência</th>
+    </tr>
+  </thead>
+  <tfoot>Total: R$<%= number_with_precision(@result, precision: 2) %></tfoot>
+  <tbody>
+    <% @transactions.each do |transaction| %>
+      <tr>
+        <th><%= transaction.kind_transaction.description %></th>
+        <th>R$<%= number_with_precision(transaction.value, precision: 2) %></th>
+        <th><%= transaction.cpf %></th>
+        <th><%= transaction.card %></th>
+        <th><%= transaction.occurred_time.strftime('%H:%M %d/%m/%Y') %></th>
+      </tr>
+    <% end %>
+  </tbody> 
+</table>

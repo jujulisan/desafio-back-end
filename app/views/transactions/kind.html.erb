@@ -1,0 +1,23 @@
+<h1 class="title">Tipos de transação</h1>
+<h3 class="subtitle"><%= link_to 'Lojas', stores_index_url %></h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Tipo de Transação</th>
+      <th>Descrição</th>
+      <th>Natureza</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @kinds.each do |kind| %>
+      <tr>
+        <th><%= kind.kind %></th>
+        <th><%= kind.description %></th>
+        <th>
+          <%= 'Entrada' if kind.input? %>
+          <%= 'Saída' if kind.output? %>
+        </th>
+      </tr>
+    <% end %>
+  </tbody> 
+</table>
